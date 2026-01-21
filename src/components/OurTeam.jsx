@@ -22,7 +22,7 @@ const teamMembers = [
     role: "Bürokauffrau",
     photo: helena   },
   {
-    name: "Vorname Nachame",
+    name: "Colin Richter",
     role: "Auszubildender",
     photo: auszubildender  },
   {
