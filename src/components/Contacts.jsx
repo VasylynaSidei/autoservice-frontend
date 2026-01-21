@@ -2,6 +2,10 @@ import React from "react";
 import { FiPhone } from "react-icons/fi";
 import { MdMailOutline } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
+import instagram from "../assets/images/instagram.png";
+import facebook from "../assets/images/facebook.png";
+import whatsapp from "../assets/images/social.png";
+
 
 import "./contacts.scss";
 function Contacts() {
@@ -42,15 +46,23 @@ function Contacts() {
                 gundpmeisterwerkstatt@t-online.de
               </div>  
               </div>
-             <div className="social-cont">
-              {/*<h6>Social Media</h6>*/}
-              <p className="social-icon"> <a href="https://wa.me/+49039916734060"><img src="src/assets/images/social.png" alt="" /></a></p>
-              <p className="social-icon">  <a href="https://www.instagram.com/gundpmeisterwerkstatt?igsh=MWpoaG9tNDRheGgweA=="><img src="src/assets/images/instagram.png" alt="" /></a></p>
-              <p className="social-icon">              <a href="https://www.facebook.com/share/1AHrFQDhBU/?mibextid=wwXIfr"><img src="src/assets/images/facebook.png" alt="" /></a>
-</p>
-             
-             
-            </div>
+              <div className="social-cont">
+  <a  className="social-icon" href="https://wa.me/+49039916734060"  target="_blank"
+        rel="noreferrer">
+    <img src={whatsapp} alt="WhatsApp" />
+  </a>
+
+  <a  className="social-icon" href="https://www.instagram.com/gundpmeisterwerkstatt"  target="_blank"
+        rel="noreferrer">
+    <img src={instagram} alt="Instagram" />
+  </a>
+
+  <a  className="social-icon" href="https://www.facebook.com/share/1AHrFQDhBU/?mibextid=wwXIfr"  target="_blank"
+        rel="noreferrer">
+    <img src={facebook} alt="Facebook" />
+  </a>
+</div>
+
             </div>
             
           </div>
