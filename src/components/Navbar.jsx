@@ -44,8 +44,8 @@ function Navbar() {
   <li><Link to="/#home" onClick={handleLinkClick}>Startseite</Link></li>
   <li><Link to="/#services" onClick={handleLinkClick}>Leistungen</Link></li>
   <li><Link to="/#about" onClick={handleLinkClick}>Über uns</Link></li>
-  <li><Link to="/#review">Bewertungen</Link></li>
-  <li><Link to="/#contacts">Kontakte</Link></li>
+  <li><Link to="/#review" onClick={handleLinkClick}>Bewertungen</Link></li>
+  <li><Link to="/#contacts" onClick={handleLinkClick}>Kontakte</Link></li>
 {/* 🔴 MOBILE BUTTON */}
 <li className="menu-kontakt mobile-only">
         <a href="tel:039916734060" onClick={handleLinkClick}>
