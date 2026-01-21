@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./cookieBanner.scss";
+import { Link } from "react-router-dom";
 
 const CookieBanner = () => {
   const [isOpen, setIsOpen] = useState(false);

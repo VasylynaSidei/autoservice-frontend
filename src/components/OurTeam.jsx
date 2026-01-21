@@ -1,33 +1,34 @@
 import React from "react";
 import  { useEffect, useRef, useState } from "react";
 import "./ourTeam.scss";
+import roco from "../assets/images/roco.jpg";
+import sergej from "../assets/images/IMG_4292.jpg";
+import helena from "../assets/images/IMG_6039.jpg";
+import auszubildender from "../assets/images/IMG_3020.jpg";
+import ronny from "../assets/images/IMG_6157.jpg";
 
 const teamMembers = [
   {
     name: "Rocco Grambeck",
     role: "Geschäftsfürer / KFZ-Meister",
-    photo: "src/assets/images/roco.jpg",
+    photo: roco,
   },
   {
     name: "Sergej Pritcin",
     role: "Geschäftsfürer / KFZ-Mechaniker",
-    photo: "src/assets/images/IMG_4292.jpg", 
-  },
+    photo: sergej  },
   {
     name: "Helena Pritcin",
     role: "Bürokauffrau",
-    photo: "src/assets/images/IMG_6039.jpg",
-  },
+    photo: helena   },
   {
     name: "Vorname Nachame",
     role: "Auszubildender",
-    photo: "src/assets/images/IMG_3020.JPG",
-  },
+    photo: auszubildender  },
   {
     name: "Ronny Seifreid",
     role: "KFZ-Mechaniker",
-    photo: "src/assets/images/IMG_6157.jpg",
-
+    photo: ronny
   },
 ];
 
