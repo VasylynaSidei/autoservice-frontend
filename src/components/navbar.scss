@@ -1,0 +1,337 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  backdrop-filter: blur(10px);       /* размытие */
+  -webkit-backdrop-filter: blur(20px); /* поддержка для Safari */
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo {
+  width: 140px;
+  height: 80px;
+  background: url("../assets/images/logo4.png");
+  background-size: cover;
+  background-position:center ; 
+  margin: 0 0 0 2rem;
+}
+
+
+
+.menu {
+  display: flex;
+  margin-bottom: 0;
+  
+  li {
+    letter-spacing: 1px;
+    position: relative;
+    list-style: none;
+    margin: 0 15px;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: inherit;
+      padding: 10px 15px;
+      display: block;
+      transition: color 0.3s ease;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0; // линия сверху
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #a40000;
+      transition: width 0.4s ease;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1); // светлая прозрачная подложка
+
+      &::before {
+        width: 100%; // линия расширяется
+      }
+
+      a {
+        color: white; // можно усилить цвет текста
+      }
+    }
+  }
+  .kontakt-btn-wrapper{
+    a{
+      text-decoration: none;
+    }
+  }
+}
+
+.menu-icon {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10000;  cursor: pointer;
+
+  span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #6f6f6f;
+    transition: all 0.3s ease;
+  }
+
+  &.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+  &.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 5px;
+    left: 0;
+    padding: 2rem;
+    background-color: #565976df;
+    width: 100vw;
+    //padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10000;  cursor: pointer;
+  
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      background-color: #6f6f6f;
+      transition: all 0.3s ease;
+    }
+  
+    &.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    &.open span:nth-child(2) {
+      opacity: 0;
+    }
+    &.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+}
+.logo {
+  width: 110px;
+  height: 60px;
+  background: url("../assets/images/logo4.png");
+  background-size: cover;
+  background-position:center ; 
+  margin: 0 0 0 2rem;
+}
+.fixed {
+  padding-left: 0rem;
+  padding-right: 0rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background: #363C3D;
+  background: radial-gradient(circle, rgba(54, 60, 61, 1) 30%, rgba(18, 22, 24, 1)100%  );
+        z-index: 1000;
+  //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.kontakt-btn-wrapper {
+  margin: 0 15px;
+  //   background-color: #a40000;
+  //   color: white;
+  padding: 12px 15px;
+
+  //   border: none;
+  //   border-radius: 10px;
+  //   font-weight: 600;
+  //   text-transform: uppercase;
+  //   transition: background-color 0.3s ease;
+
+  &:hover {
+  }
+
+
+}
+
+.kontakt-btn-brg {
+  background-color: #a40000;
+  //padding: 8px 10px;
+  color: #e1e1e1;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #8c0000;
+  }
+
+  @media (max-width: 1024px) {
+    display: block;
+    background-color: #a40000; // тёмно-красный в тон авто
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+
+    .kontakt-btn {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+    background-color: #070b10f5;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    font-size: 1.6rem;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+  .fixed {
+    padding-left: 0rem;
+    padding-right: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background: #363C3D;
+    background: radial-gradient(circle, rgba(54, 60, 61, 1) 30%, rgba(18, 22, 24, 1)100%  );
+          z-index: 1000;
+    //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+@media (max-width: 480px) {
+  .logo {
+    width: 80px;
+    height: 50px;
+    background: url("../assets/images/logo4.png");
+    background-size: cover;
+    background-position:center ; 
+   
+    
+    
+    // letter-spacing: 1px;
+    margin: 0 0 0 1rem;
+    
+  
+    
+  }
+  .menu {
+  display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+    background-color: #070b10f5;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    font-size: 1.6rem;
+   
+  }
+  .menu.open {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  
+  .menu-icon{
+    position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  z-index: 1002;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #d5d5d5;
+    transition: all 0.3s ease;
+  }
+
+  &.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+  &.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+.fixed {
+  padding-left: 0rem;
+  padding-right: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background: #363C3D;
+  background: radial-gradient(circle, rgba(54, 60, 61, 1) 30%, rgba(18, 22, 24, 1)100%  );
+        z-index: 1000;
+  //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+}
+@media (min-width: 481px) and (max-width: 768px) {
+}

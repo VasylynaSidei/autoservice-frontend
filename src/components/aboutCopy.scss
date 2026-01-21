@@ -1,0 +1,364 @@
+.about-us {
+ // background: #0d0d0d;
+  color: #b7bec6;
+
+  h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 3.5rem 0
+
+  }
+
+  .about-content {
+    display: flex;
+  width: 80%;
+    margin: auto;
+    max-width: 1200px;
+    margin: auto;
+    gap: 3rem;
+    img{
+      width: 340px;
+      border-radius: 10px;
+      box-shadow: 7px 10px 15px rgb(27, 29, 32);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    
+    }
+    .team-img{
+      position: relative;
+      top: 45px;
+  
+    }
+    .about-right{
+      display: none;
+    }
+  }
+
+  .about-intro {
+  //  width: 90%;
+    margin: auto;
+    font-size: 1.5rem;
+   // text-align: center;
+    margin-bottom: 2rem;
+    text-align: justify;
+    color: #e8e8e8;
+    .werte-heading{
+      color: #e1e1e1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-block: 1rem;
+    }
+    .ul-werte{
+      padding-left: 0rem;
+
+    }
+    li{
+      padding-left: 0rem;
+      list-style: none;
+    }
+    .werte-icon{
+      color: #d62929;
+    }
+
+  }
+
+  .about-columns {
+    //width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  .about-left {
+    flex: 1;
+    min-width: 280px;
+
+    h3 {
+      color: #ffffff;
+      margin-top: 1rem;
+    }
+
+//     .ul-werte {
+//       list-style: none;
+// // margin-left: 1.5rem;
+//       font-size: 1.5rem;
+//       li{
+//         margin-block:1rem 
+//       }   
+//     }
+  }
+
+  .about-right {
+    display: none;
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+
+    img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #222;
+    }
+
+    .about-note {
+      margin-top: 1rem;
+      font-style: italic;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .about-us {
+    // background: #0d0d0d;
+     color: #e1e1e1;
+   
+     h2 {
+       color: #ffffff;
+       font-size: 28px;
+       text-align: center;
+       margin-bottom: 2rem;
+       text-transform: uppercase;
+       letter-spacing: 1.5px;
+       margin: 3rem 0
+   
+     }
+   
+     .about-content {
+       display: flex;
+       flex-direction: column;
+     width: 80%;
+       margin: auto;
+       max-width: 1200px;
+       margin: auto;
+       gap: 0rem;
+       img{
+         width: 150px;
+         border-radius: 10px;
+         box-shadow: 7px 10px 15px rgb(27, 29, 32);
+         border: 1px solid rgba(255, 255, 255, 0.08);
+       
+       }
+       .team-img{
+         position: relative;
+        top: 5px;
+     left: 160px;
+       }
+       .cont-img-about{
+        display: none;
+       }
+     }
+   
+     .about-intro {
+     //  width: 90%;
+       margin: auto;
+       font-size: 1.1rem;
+      // text-align: center;
+       margin-bottom: 2rem;
+       text-align: justify;
+       color: #e8e8e8;
+       .werte-heading{
+         color: #e1e1e1;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         margin-block: 1rem;
+       }
+       .ul-werte{
+         padding-left: 0rem;
+   
+       }
+       li{
+         padding-left: 0rem;
+         list-style: none;
+       }
+       .werte-icon{
+         color: #d62929;
+       }
+   
+     }
+   
+     .about-columns {
+       //width: 80%;
+       margin: auto;
+       display: flex;
+       flex-wrap: wrap;
+       gap: 2rem;
+       justify-content: space-between;
+     }
+   
+     
+       h3 {
+         color: #ffffff;
+         margin-top: 1rem;
+       }
+   
+   //     .ul-werte {
+   //       list-style: none;
+   // // margin-left: 1.5rem;
+   //       font-size: 1.5rem;
+   //       li{
+   //         margin-block:1rem 
+   //       }   
+   //     }
+   
+   
+     .about-right {
+      display: block;
+       text-align: center;
+   
+       img {
+         width: 80%;
+         max-width: 800px;
+         border-radius: 5px;
+         box-shadow: 0 0 10px #222;
+       }
+   
+       .about-note {
+         margin-top: 1rem;
+         font-style: italic;
+       }
+     }
+   }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .about-us {
+    // background: #0d0d0d;
+     color: #e1e1e1;
+   
+     h2 {
+       color: #ffffff;
+       font-size: 28px;
+       text-align: center;
+       margin-bottom: 2rem;
+       text-transform: uppercase;
+       letter-spacing: 1.5px;
+       margin: 3rem 0
+   
+     }
+   
+     .about-content {
+       display: flex;
+     width: 80%;
+       margin: auto;
+       //max-width: 1200px;
+       
+       //gap: 3rem;
+       img{
+        display: none;
+         width: 200px;
+         border-radius: 10px;
+         box-shadow: 7px 10px 15px rgb(27, 29, 32);
+         border: 1px solid rgba(255, 255, 255, 0.08);
+       
+       }
+       .team-img{
+         position: relative;
+         top: 45px;
+     
+       }
+       .about-right{
+         display: none;
+       }
+     }
+     .cont-img-about{
+      display: none;
+     }
+   
+     .about-intro {
+     width: 100%;
+      // margin: auto;
+       font-size: 1.1rem;
+      // text-align: center;
+       margin-bottom: 2rem;
+       text-align: justify;
+       color: #e8e8e8;
+       .werte-heading{
+         color: #e1e1e1;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         margin-block: 1rem;
+       }
+       .ul-werte{
+         padding-left: 0rem;
+   
+       }
+       li{
+         padding-left: 0rem;
+         list-style: none;
+       }
+       .werte-icon{
+         color: #d62929;
+       }
+   
+     }
+   
+     .about-columns {
+       //width: 80%;
+       margin: auto;
+       display: flex;
+       flex-wrap: wrap;
+       gap: 2rem;
+       justify-content: space-between;
+     }
+   
+     .about-left {
+       flex: 1;
+       min-width: 280px;
+   
+       h3 {
+         color: #ffffff;
+         margin-top: 1rem;
+       }
+   
+   //     .ul-werte {
+   //       list-style: none;
+   // // margin-left: 1.5rem;
+   //       font-size: 1.5rem;
+   //       li{
+   //         margin-block:1rem 
+   //       }   
+   //     }
+     }
+   
+     .about-right {
+       display: none;
+       flex: 1;
+       min-width: 280px;
+       text-align: center;
+   
+       img {
+         width: 100%;
+         max-width: 400px;
+         border-radius: 5px;
+         box-shadow: 0 0 10px #222;
+       }
+   
+       .about-note {
+         margin-top: 1rem;
+         font-style: italic;
+       }
+     }
+   }
+
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-content {
+    img{
+      display: none;
+       width: 200px;
+       border-radius: 10px;
+       box-shadow: 7px 10px 15px rgb(27, 29, 32);
+       border: 1px solid rgba(255, 255, 255, 0.08);
+     
+     }
+  } 
+
+   .cont-img-about{
+    display: none;
+   }
+
+}

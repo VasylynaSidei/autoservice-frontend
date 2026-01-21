@@ -1,0 +1,726 @@
+.hero {
+  // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  //   url("../assets/images/bg.webp");
+  // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  //   url("https://img.freepik.com/free-vector/background-wave-particle-digital-gradient-colorful_483537-1576.jpg?t=st=1723123246~exp=1723126846~hmac=445da86fb6cda714bc13ecd216459bf1627c9f1291bf4055fa41f5f42585bd04&w=1380");
+  // background: url("https://img.freepik.com/free-photo/photo-background-green-textured-wall-rolling-floor-studio-photography-background-illuminated_1258-82807.jpg?t=st=1723126689~exp=1723130289~hmac=251529de1c42f393d71345c3a92888985e456735ffa927932f18e09dce28508c&w=826");
+ 
+  background:linear-gradient(to right, rgba(48, 55, 59, 0.319) 0%, rgba(5, 5, 5, 0.575) 100%),
+    url("../assets/images/img-hero.png");
+ // height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+  //backdrop-filter: blur(18px);
+
+ /* padding-block: 8rem;
+  padding-left: 0rem;
+*/
+  height: 100vh;
+  //padding: 2rem;
+
+  display: flex;
+  flex-direction: column; /* Default stacking for smaller screens */
+  justify-content: center;
+  align-items: start;
+  
+  .container-hero-title{
+    width: 80%;
+    margin: auto;
+  }
+  .hero-heading-cont{
+    margin-left: 12rem;
+  }
+  .hero-h1 {
+    text-align: left;
+    /* font-size: 3rem;
+    width: 60%;*/
+letter-spacing: 2px;
+    font-size: 5rem;
+   // text-align: center;
+  // text-transform: uppercase;
+    color: #ffffff;
+    //margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem 0;
+
+    
+    
+  
+  }
+  .subheading-request{
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+  img {
+    margin-top: 4rem;
+    width: 900px;
+    height: 500px;
+  }
+  .appointment {
+    text-transform: uppercase;
+   letter-spacing: 1px;
+ height: 55px;
+ padding:0 1rem;
+ font-size: 23px;
+ cursor: pointer;
+ border: none;
+ outline: none;
+ //background: transparent;
+ background-color: #a40000;
+ color: white;
+ //font-family: 'Times New Roman', Times, serif;
+ //font-weight: 700;
+ position: relative;
+ transition: all 0.5s;
+ z-index: 1;
+
+  
+  }
+
+  .appointment::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color:white;
+    z-index: -1;
+    transition: all 0.5s;
+   }
+   
+   .appointment:hover::before {
+    width: 100%;
+   }
+   
+   .appointment:hover {
+    color: #8c0000;
+   }
+   
+   .appointment:active:before {
+    background: #b9b9b9;
+   }
+  /* App.css */
+  .modal-overlay-hero {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.871);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal {
+   
+   display: flex;
+    position: fixed;
+    z-index:  1001;
+    margin: auto;
+    left: 15%;
+    top:10%;
+     width: 70%;
+     height: 80%;
+     //background:linear-gradient(-45deg, rgb(82, 91, 95) 10%, rgb(38, 47, 53) 77%);
+     background: #3D4244;
+     background: #363C3D;
+     background: radial-gradient(circle, rgba(54, 60, 61, 1) 30%, rgba(18, 22, 24, 1)100%  );
+      
+  border: 1px solid #5d5d5d64;
+
+    color: #fffefed5;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 5px;
+    gap: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+   
+   
+    
+    
+    .text-confirmation{
+      font-size: 1.6rem;
+      @media (max-width: 480px) {
+      
+        font-size: 1.1rem;
+    }
+    }
+  }
+  //
+  .modal-content {
+    padding-block: 1rem;
+    // height: 0%;
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-end;
+    //background: transparent;
+    justify-content: space-around;
+    background: transparent;
+
+   // padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+ 
+    .form-title{
+      font-size: 1.8rem;
+     // margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      @media (max-width: 480px) {
+       font-size: 1.2rem;
+       
+       
+    }
+    }
+  }
+
+  .close {
+    color: rgb(252, 251, 251);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 4%;
+  }
+  form{
+    border: none;
+  }
+ .form-group{
+label{
+  display: block;
+  margin-block: 1rem;
+  //letter-spacing: 0px;
+  font-size: 1.2rem;
+}
+input{
+  margin-block: 1rem;
+  width: 100%;
+  border: 1px rgba(105, 105, 105, 0.844) solid;
+// border-bottom: #a40000 1px solid;
+ padding: 8px;
+ font-size: 1.2rem;
+ color: #e8e8e8;
+ // outline: 1px #aeaeae8c solid;
+  border-radius: 
+  5px;
+  background-color: transparent;
+ 
+}
+input:focus{
+  outline: 1px #fff solid;
+  background: #acacac1a;
+
+}
+input::placeholder{
+  color: rgb(179, 179, 179);
+  //letter-spacing: 1px;
+  font-weight: 200;
+}
+input:focus::placeholder{
+  color: rgb(228, 228, 228);
+  //letter-spacing: 1px;
+  font-weight: 200;
+}
+ }
+
+ .modal-scrollable {
+  max-height: 100vh;
+  overflow-y: auto;
+
+  /* Chrome, Safari, Edge */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #909191; /* dark background track */
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ff0000; /* red thumb */
+    border-radius: 10px;
+    border: 2px solid #cbcbcb; /* gives padding illusion */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #cc0000; /* darker on hover */
+  }
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #898989a9 #87878700;
+}
+
+ 
+ .select-option{
+  background:transparent;
+  border-radius: 5px;
+  border: 1px rgba(105, 105, 105, 0.844) solid;
+  color: white;
+  padding-block: 10px;
+  padding-left: 5px;
+  font-size: 1.2rem;
+  width: 100%;
+  font-weight: 200;
+ }
+ .select-option:focus{
+  border: 1px rgb(255, 255, 255) solid;
+  outline: none;
+  background: #acacac1a;
+
+
+ }
+ /* Container for the checkbox and label */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: white;
+}
+
+/* Hide default checkbox */
+.checkbox-group input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ff0000;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Checked state */
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: transparent;
+  border-color: #a40000;
+  color: #a40000;
+}
+
+/* Add custom checkmark */
+.checkbox-group input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 7px;
+  width: 4px;
+  height: 10px;
+  border: solid #a40000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.daten-label{
+  font-size: 1.2rem;
+  margin-block: 1rem;
+}
+
+ .form-submit-btn{
+margin-block: 1rem;
+padding: 5px;
+border: #a40000 1px solid;
+border-radius: 5px;
+background-color:#a40000;
+color:#ffffff;
+font-size: 1.3rem;
+text-transform: uppercase;
+}
+.form-submit-btn:hover{
+  background-color: #8c0000;
+}
+}
+.thank-you-container {
+  text-align: center;
+  padding: 2rem;
+  background: #f9f9f900;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  margin: auto;
+  animation: fadeIn 0.3s ease-in-out;
+
+  .thank-you-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #d62929; // green tone for success
+    margin-bottom: 1rem;
+  }
+
+  .thank-you-text {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  .thank-you-close-btn {
+    background: #a40000;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+      background: #8c0000;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+// Phones (max-width: 480px)
+@media (max-width: 480px) {
+  .hero {
+    height: auto;
+    padding: 2rem 1rem;
+    align-items: center;
+    background-position: center;
+
+    .container-hero-title {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-h1 {
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .subheading-request {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .appointment {
+      font-size: 1rem;
+      padding: 12px 1rem;
+      width: 100%;
+      height: auto;
+    }
+
+    .modal {
+      width: 95%;
+      max-height: 95vh;
+      overflow-y: auto;
+      top: 5%;
+      left: 2.5%;
+      padding: 1rem;
+    }
+
+    .modal-content {
+      width: 100%;
+      padding: 0.5rem;
+    }
+
+    .form-group {
+      input,
+      select {
+        font-size: 1rem;
+        padding: 6px;
+      }
+
+      label {
+        font-size: 1rem;
+      }
+    }
+
+    .checkbox-group {
+      font-size: 0.95rem;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .daten-label {
+      font-size: 1rem;
+    }
+
+    .form-submit-btn {
+      font-size: 1rem;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .close {
+      font-size: 1.5rem;
+      right: 5%;
+    }
+
+    .text-confirmation {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+}
+
+// Tablets (481px to 1024px)
+@media (min-width: 481px) and (max-width: 1024px) {
+  .hero {
+    height: auto;
+    padding: 3rem 2rem;
+    align-items: center;
+    background-position: center;
+
+    .container-hero-title {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .subheading-request {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .appointment {
+      font-size: 1.2rem;
+      padding: 14px 2rem;
+    }
+
+    .modal {
+      width: 85%;
+      max-height: 90vh;
+      overflow-y: auto;
+      top: 8%;
+      left: 7.5%;
+      padding: 1.5rem;
+    }
+
+    .modal-content {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .form-group {
+      input,
+      select {
+        font-size: 1.1rem;
+        padding: 10px;
+      }
+
+      label {
+        font-size: 1.1rem;
+      }
+    }
+
+    .checkbox-group {
+      font-size: 1rem;
+    }
+
+    .daten-label {
+      font-size: 1.1rem;
+    }
+
+    .form-submit-btn {
+      font-size: 1.1rem;
+      padding: 12px;
+      width: 100%;
+    }
+
+    .close {
+      font-size: 2rem;
+      right: 3%;
+    }
+
+    .text-confirmation {
+      font-size: 1.2rem;
+    }
+  }
+  .modal-scrollable {
+    max-height: 100vh;
+    overflow-y: auto;}
+}
+// Phones (max-width: 480px)
+@media (max-width: 480px) {
+  .hero {
+    height: 100vh;
+    padding: 2rem 1rem;
+    align-items: center;
+    background-position: center;
+
+    .container-hero-title {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-h1 {
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+.cont-appoit-btn{
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+}
+    .subheading-request {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .appointment {
+      font-size: 1rem;
+      padding: 12px 1rem;
+      width: 80%;
+      height: auto;
+      justify-content: flex-start;
+
+
+    }
+
+    .modal {
+      width: 95%;
+      height: 80%;
+      top: 5%;
+      left: 2.5%;
+      padding: 1rem;
+    }
+
+    .modal-content {
+      width: 100%;
+      padding: 0.5rem;
+    }
+
+    .form-group {
+      input,
+      select {
+        font-size: 1rem;
+        padding: 6px;
+      }
+
+      label {
+        font-size: 1rem;
+      }
+    }
+
+    .checkbox-group {
+      font-size: 0.95rem;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .daten-label {
+      font-size: 1rem;
+    }
+
+    .form-submit-btn {
+      font-size: 1rem;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .close {
+      font-size: 1.5rem;
+      right: 5%;
+    }
+
+    .text-confirmation {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+}
+
+// Tablets (481px to 1024px)
+@media (min-width: 481px) and (max-width: 1024px) {
+  .hero {
+    height: 100vh;
+    width: 100vw;
+    padding: 3rem 2rem;
+    align-items: center;
+    background-position: center;
+
+    .container-hero-title {
+      width: 80%;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .hero-h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .subheading-request {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .appointment {
+      font-size: 1.2rem;
+      padding: 14px 2rem;
+    }
+
+    .modal {
+      width: 85%;
+      height: auto;
+      top: 8%;
+      left: 7.5%;
+      padding: 1.5rem;
+    }
+
+    .modal-content {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .form-group {
+      input,
+      select {
+        font-size: 1.1rem;
+        padding: 10px;
+      }
+
+      label {
+        font-size: 1.1rem;
+      }
+    }
+
+    .checkbox-group {
+      font-size: 1rem;
+    }
+
+    .daten-label {
+      font-size: 1.1rem;
+    }
+
+    .form-submit-btn {
+      font-size: 1.1rem;
+      padding: 12px;
+      width: 100%;
+    }
+
+    .close {
+      font-size: 2rem;
+      right: 3%;
+    }
+
+    .text-confirmation {
+      font-size: 1.2rem;
+    }
+  }
+}

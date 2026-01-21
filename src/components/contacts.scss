@@ -1,0 +1,348 @@
+#contacts {
+  //padding: 2rem;
+
+  h2 {
+    text-align: center;
+    margin: 3.5rem 0;
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .contacts-container {
+    width: 80%;
+    max-width: 1200px; // Restrict max width for larger screens
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; // Allow wrapping for smaller screens
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+
+    .contact-info {
+      // flex: 1; // Adjust to take available space
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      //  height: 100%;
+      width: 60%;
+
+      .contact-icon {
+        margin-bottom: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem; // Space between icons and text
+        font-size: 1.5rem;
+        svg {
+          font-size: 1.8rem; // Icon size
+        }
+      }
+    }
+
+    .map {
+      // flex: 1;
+      width: 100%;
+      height: 400px; // Adjust to take available space
+      display: flex;
+      justify-content: center;
+
+      iframe {
+        width: 100%; // Full width for container
+        max-width: 100%; // Restrict size on larger screens
+        height: auto; // Maintain aspect ratio
+        border: none;
+      }
+    }
+  }
+
+  /* Responsive Design */
+
+  .red-line {
+    width: 100%;
+    border-top: 3px solid #a40000;
+    margin-block: 2rem;
+  }
+  .contact-container-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    .opening-hours__title {
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+    }
+    .opening-hours__row {
+      display: flex;
+      flex-direction: column;
+      margin: 2.5rem 0;
+    }
+    .opening-hours__day {
+      letter-spacing: 1px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .opening-hours__time {
+      font-size: 1.2rem;
+    }
+  }
+}
+.social-cont {
+  h6 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .social-icon {
+    //background:  linear-gradient(to right, rgb(0, 0, 0), rgb(2, 8, 61));
+    display: inline;
+    margin-right: 1.5rem;
+  }
+  img {
+    width: 40px;
+  }
+}
+.social-icon:hover {
+  img {
+    transition: all 0.3s ease-in-out;
+    scale: 1.06;
+    filter: drop-shadow(2px 3px 5px #0e0e0e);  }
+}
+@media (max-width: 480px) {
+  #contacts {
+    //padding: 2rem;
+
+    h2 {
+      text-align: center;
+      margin: 2.5rem 0;
+      font-size: 28px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .contacts-container {
+      width: 80%;
+      max-width: 1200px; // Restrict max width for larger screens
+      margin: auto;
+      flex-wrap: wrap; // Allow wrapping for smaller screens
+      // justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      .contact-container-info {
+        display: flex;
+        flex-direction: column;
+      }
+      .contact-info {
+        // flex: 1; // Adjust to take available space
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        //  height: 100%;
+        width: 100%;
+
+        .contact-icon {
+          margin-bottom: 2rem;
+          display: flex;
+          align-items: center;
+          //gap: 0.5rem; // Space between icons and text
+          font-size: 1rem;
+          svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            color: #fff; // or inherit
+          }
+        }
+      }
+
+      .map {
+        // flex: 1;
+        width: 100%;
+        height: 300px; // Adjust to take available space
+        display: flex;
+        justify-content: center;
+
+        iframe {
+          width: 100%; // Full width for container
+          max-width: 100%; // Restrict size on larger screens
+          height: auto; // Maintain aspect ratio
+          border: none;
+        }
+      }
+    }
+
+    /* Responsive Design */
+
+    .red-line {
+      width: 100%;
+      border-top: 3px solid #a40000;
+      margin-block: 2rem;
+    }
+    .contact-container-info {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: auto;
+      .opening-hours__title {
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+      }
+      .opening-hours__row {
+        display: flex;
+        flex-direction: column;
+        margin: 1.5rem 0;
+      }
+      .opening-hours__day {
+        letter-spacing: 1px;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .opening-hours__time {
+        font-size: 1rem;
+      }
+    }
+  }
+  .social-cont {
+    h6 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .social-icon {
+      //background:  linear-gradient(to right, rgb(0, 0, 0), rgb(2, 8, 61));
+      display: inline;
+      margin-right: 1.5rem;
+    }
+    img {
+      width: 30px;
+    }
+  }
+  .social-icon:hover {
+    img {
+      transition: all 0.3s ease-in-out;
+      scale: 1.06;
+    }
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #contacts {
+    //padding: 2rem;
+
+    h2 {
+      text-align: center;
+      margin: 3rem 0;
+      font-size: 28px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .contacts-container {
+      width: 80%;
+      max-width: 1200px; // Restrict max width for larger screens
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap; // Allow wrapping for smaller screens
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+
+      .contact-info {
+        // flex: 1; // Adjust to take available space
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        //  height: 100%;
+        width: 50%;
+
+        .contact-icon {
+          margin-bottom: 3rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem; // Space between icons and text
+          font-size: 1.2rem;
+          svg {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            color: #fff;
+          }
+        }
+      }
+
+      .map {
+        // flex: 1;
+        width: 100%;
+        height: 400px; // Adjust to take available space
+        display: flex;
+        justify-content: center;
+
+        iframe {
+          width: 100%; // Full width for container
+          max-width: 100%; // Restrict size on larger screens
+          height: auto; // Maintain aspect ratio
+          border: none;
+        }
+      }
+    }
+
+    /* Responsive Design */
+
+    .red-line {
+      width: 100%;
+      border-top: 3px solid #a40000;
+      margin-block: 2rem;
+    }
+    .contact-container-info {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: auto;
+      .opening-hours__title {
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+        letter-spacing: 1px;
+      }
+      .opening-hours__row {
+        display: flex;
+        flex-direction: column;
+        margin: 2.5rem 0;
+      }
+      .opening-hours__day {
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .opening-hours__time {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .social-cont {
+    h6 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .social-icon {
+      //background:  linear-gradient(to right, rgb(0, 0, 0), rgb(2, 8, 61));
+      display: inline;
+      margin-right: 1.5rem;
+    }
+    img {
+      width: 40px;
+    }
+  }
+  .social-icon:hover {
+    img {
+      transition: all 0.3s ease-in-out;
+      scale: 1.06;
+    }
+  }
+}

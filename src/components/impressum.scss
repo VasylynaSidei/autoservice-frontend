@@ -1,0 +1,81 @@
+.impressum-container {
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+  }
+  
+  .impressum {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 50px;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  
+    @media (max-width: 768px) {
+      padding: 30px 20px;
+    }
+  
+    h1 {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 40px;
+
+      margin-top: 1rem;
+      color: #f5f7fa; // почти белый
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      color: #e6e8ec;
+    }
+  
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #d6d9df;
+    }
+  
+    p,
+    address {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #b8bcc6; // основной текст
+      margin-bottom: 12px;
+    }
+  
+    address {
+      font-style: normal;
+    }
+  
+    strong {
+      font-weight: 600;
+      color: #ffffff;
+    }
+  
+    section {
+      margin-bottom: 25px;
+    }
+  
+    a {
+        color: #b8bcc6; // основной текст
+        text-decoration: none;
+      font-weight: 500;
+  
+      &:hover {
+        text-decoration: underline;
+        color: #cbd0dd; // основной текст
+    }
+    }
+  
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.95rem;
+      text-align: center;
+      color: #9aa0aa;
+    }
+  }
+  

@@ -1,0 +1,100 @@
+.team-section {
+ // background: linear-gradient(180deg, #1b1f22 0%, #121517 100%);
+  padding: 0 1rem 3rem 0rem;
+  color: #fff;
+  text-align: center;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.team-subtitle {
+  color: #ccc;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.team-card {
+  background: linear-gradient(-45deg, rgba(82, 91, 95, 0) 0%, rgba(38, 47, 53, 0.832) 77%);  border-radius: 12px;
+  border-radius: 14px;
+  overflow: hidden;
+  //box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 7px 10px 15px rgb(27, 29, 32);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.25);
+  }
+
+  &__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top; // shows top of image if desired
+      transition: transform 0.6s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  &__info {
+    padding: 1rem;
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+      color: #fff;
+    }
+    p {
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-title {
+    font-size: 2rem;
+  }
+  .team-subtitle {
+    font-size: 1rem;
+  }
+}
