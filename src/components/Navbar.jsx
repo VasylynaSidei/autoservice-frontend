@@ -46,14 +46,20 @@ function Navbar() {
   <li><Link to="/#about" onClick={handleLinkClick}>Über uns</Link></li>
   <li><Link to="/#review">Bewertungen</Link></li>
   <li><Link to="/#contacts">Kontakte</Link></li>
-
+{/* 🔴 MOBILE BUTTON */}
+<li className="menu-kontakt mobile-only">
+        <a href="tel:039916734060" onClick={handleLinkClick}>
+          <button className="kontakt-btn-brg">Kontakt</button>
+        </a>
+      </li>
 </ul>
 
-          <p className="kontakt-btn-wrapper">
-  <a href="tel:039916734060">
-    <button className="kontakt-btn-brg">Kontakt</button>
-  </a>
-</p>
+{/* 🔴 DESKTOP BUTTON */}
+<div className="kontakt-btn-wrapper desktop-only">
+      <a href="tel:039916734060">
+        <button className="kontakt-btn-brg">Kontakt</button>
+      </a>
+    </div>
     
 
       </div>

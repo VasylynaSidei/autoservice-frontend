@@ -3,7 +3,7 @@ nav {
   top: 0;
   width: 100%;
   padding: 20px 40px;
-  backdrop-filter: blur(10px);       /* размытие */
+  backdrop-filter: blur(10px); /* размытие */
   -webkit-backdrop-filter: blur(20px); /* поддержка для Safari */
   z-index: 100;
   transition: all 0.3s ease-in-out;
@@ -14,16 +14,14 @@ nav {
   height: 80px;
   background: url("../assets/images/logo4.png");
   background-size: cover;
-  background-position:center ; 
+  background-position: center;
   margin: 0 0 0 2rem;
 }
-
-
 
 .menu {
   display: flex;
   margin-bottom: 0;
-  
+
   li {
     letter-spacing: 1px;
     position: relative;
@@ -65,10 +63,18 @@ nav {
       }
     }
   }
-  .kontakt-btn-wrapper{
-    a{
+  .kontakt-btn-wrapper {
+    a {
       text-decoration: none;
     }
+  }
+  /* === VISIBILITY HELPERS === */
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
   }
 }
 
@@ -77,7 +83,8 @@ nav {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  z-index: 10000;  cursor: pointer;
+  z-index: 10000;
+  cursor: pointer;
 
   span {
     display: block;
@@ -118,14 +125,14 @@ nav {
     display: flex;
   }
 
-
   .menu-icon {
     display: block;
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    z-index: 10000;  cursor: pointer;
-  
+    z-index: 10000;
+    cursor: pointer;
+
     span {
       display: block;
       width: 25px;
@@ -134,7 +141,7 @@ nav {
       background-color: #6f6f6f;
       transition: all 0.3s ease;
     }
-  
+
     &.open span:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
@@ -145,13 +152,16 @@ nav {
       transform: rotate(-45deg) translate(5px, -5px);
     }
   }
+  .mobile-only {
+    display: block;
+  }
 }
 .logo {
   width: 110px;
   height: 60px;
   background: url("../assets/images/logo4.png");
   background-size: cover;
-  background-position:center ; 
+  background-position: center;
   margin: 0 0 0 2rem;
 }
 .fixed {
@@ -162,28 +172,21 @@ nav {
   left: 0;
   right: 0;
   margin: 0;
-  background: #363C3D;
-  background: radial-gradient(circle, rgba(54, 60, 61, 1) 30%, rgba(18, 22, 24, 1)100%  );
-        z-index: 1000;
+  background: #363c3d;
+  background: radial-gradient(
+    circle,
+    rgba(54, 60, 61, 1) 30%,
+    rgba(18, 22, 24, 1) 100%
+  );
+  z-index: 1000;
   //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .kontakt-btn-wrapper {
   margin: 0 15px;
-  //   background-color: #a40000;
-  //   color: white;
   padding: 12px 15px;
-
-  //   border: none;
-  //   border-radius: 10px;
-  //   font-weight: 600;
-  //   text-transform: uppercase;
-  //   transition: background-color 0.3s ease;
-
   &:hover {
   }
-
-
 }
 
 .kontakt-btn-brg {
@@ -248,10 +251,31 @@ nav {
     left: 0;
     right: 0;
     margin: 0;
-    background: #363C3D;
-    background: radial-gradient(circle, rgba(54, 60, 61, 1) 30%, rgba(18, 22, 24, 1)100%  );
-          z-index: 1000;
+    background: #363c3d;
+    background: radial-gradient(
+      circle,
+      rgba(54, 60, 61, 1) 30%,
+      rgba(18, 22, 24, 1) 100%
+    );
+    z-index: 1000;
     //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  /* ❌ Скрываем кнопку СНАРУЖИ */
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* ✅ Показываем кнопку В МЕНЮ */
+  .mobile-only {
+    display: block;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .mobile-only .kontakt-btn-brg {
+    //   width: 100%;
+    padding: 14px 0;
+    font-size: 1.2rem;
   }
 }
 @media (max-width: 480px) {
@@ -260,18 +284,13 @@ nav {
     height: 50px;
     background: url("../assets/images/logo4.png");
     background-size: cover;
-    background-position:center ; 
-   
-    
-    
+    background-position: center;
+
     // letter-spacing: 1px;
     margin: 0 0 0 1rem;
-    
-  
-    
   }
   .menu {
-  display: none;
+    display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -283,7 +302,6 @@ nav {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 10;
     font-size: 1.6rem;
-   
   }
   .menu.open {
     position: fixed;
@@ -291,47 +309,52 @@ nav {
     height: 100vh;
     overflow-y: auto;
   }
-  
-  
-  .menu-icon{
+
+  .menu-icon {
     position: absolute;
-  top: 1.2rem;
-  right: 1.5rem;
-  z-index: 1002;
-  cursor: pointer;
+    top: 1.2rem;
+    right: 1.5rem;
+    z-index: 1002;
+    cursor: pointer;
 
-  span {
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      background-color: #d5d5d5;
+      transition: all 0.3s ease;
+    }
+
+    &.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    &.open span:nth-child(2) {
+      opacity: 0;
+    }
+    &.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+  .fixed {
+    padding-left: 0rem;
+    padding-right: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background: #363c3d;
+    background: radial-gradient(
+      circle,
+      rgba(54, 60, 61, 1) 30%,
+      rgba(18, 22, 24, 1) 100%
+    );
+    z-index: 1000;
+    //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  .mobile-only {
     display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px;
-    background-color: #d5d5d5;
-    transition: all 0.3s ease;
-  }
-
-  &.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  &.open span:nth-child(2) {
-    opacity: 0;
-  }
-  &.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-}
-.fixed {
-  padding-left: 0rem;
-  padding-right: 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  background: #363C3D;
-  background: radial-gradient(circle, rgba(54, 60, 61, 1) 30%, rgba(18, 22, 24, 1)100%  );
-        z-index: 1000;
-  //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-}
+  }}
 @media (min-width: 481px) and (max-width: 768px) {
 }

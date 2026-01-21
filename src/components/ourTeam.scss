@@ -1,8 +1,11 @@
 .team-section {
+  margin: auto;
+  width: 80%;
  // background: linear-gradient(180deg, #1b1f22 0%, #121517 100%);
-  padding: 0 1rem 3rem 0rem;
+ // padding: 0 1rem 3rem 0rem;
   color: #fff;
   text-align: center;
+  padding-bottom: 1rem;
 }
 
 .team-container {
@@ -91,14 +94,20 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+
   .team-grid {
     opacity: 1 !important;
     transform: none !important;
   }
   .team-title {
     font-size: 2rem;
+    margin: auto;
   }
   .team-subtitle {
     font-size: 1rem;
+ //   width: 80%;
+  }
+  .team-section{
+    padding: 2rem;
   }
 }
