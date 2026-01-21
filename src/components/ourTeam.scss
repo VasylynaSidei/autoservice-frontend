@@ -91,6 +91,10 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .team-grid {
+    opacity: 1 !important;
+    transform: none !important;
+  }
   .team-title {
     font-size: 2rem;
   }

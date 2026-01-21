@@ -37,6 +37,10 @@ export default function OurTeam() {
 const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    if (window.innerWidth < 768) {
+      setVisible(true);
+      return;
+    }
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -44,7 +48,7 @@ const [visible, setVisible] = useState(false);
           obs.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
     if (sectionRef.current) obs.observe(sectionRef.current);
     return () => obs.disconnect();
