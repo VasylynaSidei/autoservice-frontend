@@ -5,7 +5,7 @@ const Datenschutz = () => {
   return (
     <div className="datenschutz-container">
        <div className="datenschutz-content">
-      <h1>Datenschutzerklärung</h1>
+      <h1 className="datenschutz-title">Datenschutzerklärung</h1>
 
       <h2>1. Verantwortlicher</h2>
       <p>

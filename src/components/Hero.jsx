@@ -353,7 +353,7 @@ function Hero() {
                           required
                         />
                         <label className="daten-label">
-                          Ich akzeptiere die Datenschutzbestimmungen
+                          Ich akzeptiere die <a href="/datenschutz" title="Datenschutzbestimmungen">Datenschutzbestimmungen</a> 
                         </label>
                       </div>
                       <button
