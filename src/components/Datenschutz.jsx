@@ -9,12 +9,12 @@ const Datenschutz = () => {
 
       <h2>1. Verantwortlicher</h2>
       <p>
-        Muster Autowerkstatt GmbH <br />
-        Musterstraße 12 <br />
-        12345 Musterstadt <br />
+      G&P Meisterwerkstatt GbR <br />
+      Gew. Eichholzstraße 19 <br />
+      17192 Waren /Müritz <br />
         Deutschland <br />
-        Telefon: +49 123 456789  <br />
-       E-Mail: info@muster-autowerkstatt.de
+        Telefon: 03991-6734060  <br />
+       E-Mail: gundpmeisterwerkstatt@t-online.de
       </p>
 
       <h2>2. Allgemeine Hinweise</h2>
