@@ -3,6 +3,16 @@ import { useTranslation } from "react-i18next";
 import "./services.scss";
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import motor from "../assets/images/motor.png";
+import getriebe from "../assets/images/getriebe.png";
+import bremsen from "../assets/images/bremsen.png";
+import fahrwerk from "../assets/images/fahrwerk.png";
+import klima from "../assets/images/klimaanlage.png";
+import scheibe from "../assets/images/scheibe.png";
+import reifen from "../assets/images/reifen.png";
+import huau from "../assets/images/hu-au.jpg";
+import inspection from "../assets/images/inspection.png";
+
 function Services() {
   const { t } = useTranslation();
 
@@ -13,48 +23,39 @@ function Services() {
   });
   const services = [
     {
-      img: "motor.png",
-      title: "MOTORDIAGNOSE",
+      img: motor,      title: "MOTORDIAGNOSE",
       desc: "Fehlersuche mit moderner Diagnosetechnik.",
     },
     {
-      img: "getriebe.png",
-      title: "GETRIEBEÖLWECHSEL",
+      img: getriebe,      title: "GETRIEBEÖLWECHSEL",
       desc: "Fachgerechter Getriebeölwechsel und Spülung.",
     },
     {
-      img: "bremsen.png",
-      title: "BREMSENREPARATUR",
+      img: bremsen,      title: "BREMSENREPARATUR",
       desc: "Sicher bremsen! Wir prüfen, reparieren oder tauschen Ihre Bremsen fachgerecht aus.",
     },
     {
-      img: "fahrwerk.png",
-      title: "FAHRWERKSREPARATUR",
+      img: fahrwerk,      title: "FAHRWERKSREPARATUR",
       desc: "Für ein sicheres Fahrverhalten sorgen wir durch fachgerechte Reparatur und genaue Achsvermessung.",
     },
     {
-      img: "klimaanlage.png",
-      title: "KLIMAANLAGENSERVICE",
+      img: klima,      title: "KLIMAANLAGENSERVICE",
       desc: "Wartung und Reparatur Ihre Klimaanlage.",
     },
     {
-      img: "scheibe.png",
-      title: "FRONTSCHEIBENREPARATUR",
+      img: scheibe,      title: "FRONTSCHEIBENREPARATUR",
       desc: "Wir reparieren, schlänge oder ersetzen Ihre Frontscheibe fachgerecht Abrechnung mit allen Versicherungen.",
     },
     {
-      img: "reifen.png",
-      title: "REIFENDIENST",
+      img: reifen,      title: "REIFENDIENST",
       desc: "Reifen Bestellung, Montage, Auswuchten und Einlagerung.",
     },
     {
-      img: "hu-au.jpg",
-      title: "HU/AU-TÄGLICH",
+      img: huau,      title: "HU/AU-TÄGLICH",
       desc: "Tägliche Haupt- und Abgasuntersuchung direkt bei uns – schnell und unkompliziert.",
     },
     {
-      img: "inspection.png",
-      title: "INSPEKTION UND WARTUNG ",
+      img: inspection,      title: "INSPEKTION UND WARTUNG ",
       desc: "Fachgerechte Wartung mit freigegebenem Markenöl. Inspektion nach Herstellervorgaben, Eintragung in Digitales Serviceheft.",
     },
   ];
