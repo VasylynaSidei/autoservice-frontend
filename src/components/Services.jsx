@@ -1,8 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./services.scss";
-import AOS from 'aos';
-import 'aos/dist/aos.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 import motor from "../assets/images/motor.png";
 import getriebe from "../assets/images/getriebe.png";
 import bremsen from "../assets/images/bremsen.png";
@@ -17,49 +17,57 @@ function Services() {
   const { t } = useTranslation();
 
   AOS.init({
-    easing:"linear",
+    easing: "linear",
     duration: 1500, // animation duration
-    once: true     // whether animation should happen only once
+    once: true, // whether animation should happen only once
   });
   const services = [
     {
-      img: motor,      title: "MOTORDIAGNOSE",
+      img: motor,
+      title: "MOTORDIAGNOSE",
       desc: "Fehlersuche mit moderner Diagnosetechnik.",
     },
     {
-      img: getriebe,      title: "GETRIEBEÖLWECHSEL",
+      img: getriebe,
+      title: "GETRIEBEÖLWECHSEL",
       desc: "Fachgerechter Getriebeölwechsel und Spülung.",
     },
     {
-      img: bremsen,      title: "BREMSENREPARATUR",
+      img: bremsen,
+      title: "BREMSENREPARATUR",
       desc: "Sicher bremsen! Wir prüfen, reparieren oder tauschen Ihre Bremsen fachgerecht aus.",
     },
     {
-      img: fahrwerk,      title: "FAHRWERKSREPARATUR",
+      img: fahrwerk,
+      title: "FAHRWERKSREPARATUR",
       desc: "Für ein sicheres Fahrverhalten sorgen wir durch fachgerechte Reparatur und genaue Achsvermessung.",
     },
     {
-      img: klima,      title: "KLIMAANLAGENSERVICE",
+      img: klima,
+      title: "KLIMAANLAGENSERVICE",
       desc: "Wartung und Reparatur Ihre Klimaanlage.",
     },
     {
-      img: scheibe,      title: "FRONTSCHEIBENREPARATUR",
+      img: scheibe,
+      title: "FRONTSCHEIBENREPARATUR",
       desc: "Wir reparieren, schlänge oder ersetzen Ihre Frontscheibe fachgerecht Abrechnung mit allen Versicherungen.",
     },
     {
-      img: reifen,      title: "REIFENDIENST",
+      img: reifen,
+      title: "REIFENDIENST",
       desc: "Reifen Bestellung, Montage, Auswuchten und Einlagerung.",
     },
     {
-      img: huau,      title: "HU/AU-TÄGLICH",
+      img: huau,
+      title: "HU/AU-TÄGLICH",
       desc: "Tägliche Haupt- und Abgasuntersuchung direkt bei uns – schnell und unkompliziert.",
     },
     {
-      img: inspection,      title: "INSPEKTION UND WARTUNG ",
+      img: inspection,
+      title: "INSPEKTION UND WARTUNG ",
       desc: "Fachgerechte Wartung mit freigegebenem Markenöl. Inspektion nach Herstellervorgaben, Eintragung in Digitales Serviceheft.",
     },
   ];
-  
 
   return (
     <section className="services" id="services">
@@ -73,11 +81,8 @@ function Services() {
 
       <div className="grid">
         {services.map((service, index) => (
-          <div className="card"  key={index}>
-            <img
-              src={(`src/assets/images/${service.img}`)}
-              alt={service.title}
-            />
+          <div className="card" key={index}>
+            <img src={service.img} alt={service.title} />
             <div className="card-content">
               <h2>{service.title}</h2>
               <p>{service.desc}</p>
