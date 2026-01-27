@@ -1,11 +1,10 @@
 .team-section {
-  margin: auto;
   width: 80%;
- // background: linear-gradient(180deg, #1b1f22 0%, #121517 100%);
- // padding: 0 1rem 3rem 0rem;
+  max-width: 1400px;
+  margin: 0 auto;
   color: #fff;
-  text-align: center;
-  padding-bottom: 1rem;
+  text-align: justify;
+  padding: 2rem 0 4rem;
 }
 
 .team-container {
@@ -15,26 +14,30 @@
 
 .team-title {
   font-size: 2.5rem;
- // font-weight: 600;
   margin-bottom: 0.8rem;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
+  line-height: 1.2;
 }
 
 .team-subtitle {
   color: #e1e1e1;
   font-size: 1.5rem;
-  max-width: 700px;
-  margin: 0 auto 3rem;
+  max-width: 720px;
+  margin: 0 auto 0rem;
+  line-height: 1.5;
+  
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   justify-items: center;
+
+  /* Анимация появления — только на десктопе */
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 
   &.visible {
     opacity: 1;
@@ -43,20 +46,30 @@
 }
 
 .team-card {
-  background: linear-gradient(-45deg, rgba(82, 91, 95, 0) 0%, rgba(38, 47, 53, 0.832) 77%);  border-radius: 12px;
+  background: linear-gradient(-45deg, rgba(82, 91, 95, 0) 0%, rgba(38, 47, 53, 0.832) 77%);
   border-radius: 14px;
   overflow: hidden;
-  //box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  width: 100%;
-  max-width: 250px;
   box-shadow: 7px 10px 15px rgb(27, 29, 32);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  max-width: 260px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 
+  /* Hover — ТОЛЬКО на устройствах с hover */
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(255, 0, 0, 0.25);
+    }
 
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.25);
+    &__media img {
+      transform: scale(1);
+      transition: transform 0.6s ease;
+
+      &:hover {
+        transform: scale(1.06);
+      }
+    }
   }
 
   &__media {
@@ -69,46 +82,114 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top; // shows top of image if desired
-      transition: transform 0.6s ease;
-    }
-
-    &:hover img {
-      transform: scale(1.05);
+      object-position: center top;
     }
   }
 
   &__info {
-    padding: 1rem;
+    padding: 1.2rem 1rem;
+
     h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
       color: #fff;
+      line-height: 1.3;
     }
+
     p {
-      color: #aaa;
+      color: #bbb;
       font-size: 0.95rem;
+      line-height: 1.45;
     }
   }
 }
 
-/* Responsive adjustments */
+/* ────────────────────────────────────────────────
+   Мобильные ≤ 768px
+───────────────────────────────────────────────── */
 @media (max-width: 768px) {
+  .team-section {
+    width: 90%;
+    padding: 1.5rem 0 3rem;
+  }
+
+  .team-title {
+    font-size: 2.125rem;       // ≈34px — заметно, но не занимает экран
+    margin-bottom: 1rem;
+  }
+
+  .team-subtitle {
+    font-size: 1.25rem;        // ≈20px
+    max-width: 90%;
+    margin-bottom: 2.5rem;
+  }
 
   .team-grid {
-    opacity: 1 !important;
-    transform: none !important;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.8rem;
+
+    /* Отключаем анимацию на мобильном */
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
+
+  .team-card {
+    max-width: 280px;
+
+    &__info {
+      padding: 1.1rem;
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+/* Очень маленькие экраны ≤ 480px */
+@media (max-width: 480px) {
+  .team-section {
+    width: 92%;
+    padding: 1rem 0 2.5rem;
+  }
+
   .team-title {
-    font-size: 2rem;
-    margin: auto;
-    margin-top: 0;
+    font-size: 1.875rem;       // ≈30px
+    margin-bottom: 0.8rem;
   }
+
   .team-subtitle {
-    font-size: 1rem;
- //   width: 80%;
+    font-size: 1.125rem;       // ≈18px — комфортно для чтения
+    line-height: 1.55;
   }
-  .team-section{
-    padding-bottom: 2rem;
+
+  .team-grid {
+    grid-template-columns: 1fr; // одна карточка в ряд
+    gap: 1.5rem;
+  }
+
+  .team-card {
+    max-width: 320px;
+
+    &__media {
+      aspect-ratio: 4 / 4.2;   // чуть квадратнее — лучше смотрится
+    }
+
+    &__info {
+      padding: 1rem 0.9rem;
+
+      h3 {
+        font-size: 1.15rem;
+      }
+
+      p {
+        font-size: 0.9375rem;  // ≈15px — минимум, но читаемо
+      }
+    }
   }
 }
