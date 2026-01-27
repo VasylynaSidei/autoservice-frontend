@@ -37,7 +37,7 @@ const MobileContactMenu = () => {
           <FiPhone />
         </a>
 
-        <a href="mailto:info@example.com" className="menu-item mail">
+        <a href="mailto:gundpmeisterwerkstatt@t-online.de" className="menu-item mail">
           <FiMail />
         </a>
 

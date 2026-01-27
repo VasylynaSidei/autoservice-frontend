@@ -78,7 +78,7 @@ h1 {
   .subtitle {
     font-size: 1.25rem;           // ≈20px
     margin: 1.5rem 1rem;
-    text-align: center;           // justify плохо выглядит на узких экранах
+    text-align: justify;           // justify плохо выглядит на узких экранах
   }
 
   .grid {
@@ -123,7 +123,7 @@ h1 {
   .grid {
     grid-template-columns: 1fr;   // одна карточка в ряд
     gap: 1.5rem;
-    padding: 0 0.8rem 2.5rem;
+    padding: 0 1rem 2.5rem;
   }
 
   .card img {
