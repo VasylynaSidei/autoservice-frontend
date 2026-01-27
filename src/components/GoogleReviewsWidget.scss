@@ -1,20 +1,66 @@
 .reviews-section {
-    padding: 4rem 2rem;
-    background: #101416;
-    text-align: center;
-  
-    .reviews-title {
-      color: #fff;
-      font-size: 2.4rem;
-      margin-bottom: 2rem;
-      letter-spacing: 1px;
-    }
-  
-    .elfsight-app-64f56d75-3598-4961-a4cc-2f55ea8ce09f {
-      max-width: 900px;
-      margin: 0 auto;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-      border-radius: 12px;
+  padding: 4rem 1rem;          // уменьши боковые отступы на мобильном
+  background: #101416;
+  text-align: center;
+  overflow-x: hidden;          // ← важно! предотвращает горизонтальный скролл всей секции
+
+  .reviews-title {
+    color: #fff;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;       // уменьши заголовок на мобильном
     }
   }
- 
+
+  // Основной контейнер Elfsight
+  .elfsight-app-64f56d75-3598-4961-a4cc-2f55ea8ce09f {
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    width: 100% !important;     // ← заставляем занимать всю доступную ширину родителя
+    overflow: hidden;           // убираем возможный внутренний скролл по горизонтали
+
+    @media (max-width: 768px) {
+      max-width: 100% !important;     // на мобильном — полная ширина экрана
+      margin: 0 auto;
+      border-radius: 8px;             // чуть меньше радиус
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+      // Принудительно сжимаем внутренние элементы виджета (очень часто помогает)
+      &,
+      .eapps-google-reviews,
+      .eapps-reviews,
+      [class*="global-styles"],
+      [class*="Widget__Wrapper"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      // Если всё ещё вылезает — можно добавить
+      .eapps-reviews-review-item,
+      .eapps-reviews-review-content {
+        max-width: 100% !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 8px;  // минимальные внутренние отступы
+    }
+  }
+}@media (max-width: 768px) {
+  .global-styles,
+  .elfsight-app-64f56d75-3598-4961-a4cc-2f55ea8ce09f,
+  [class*="Widget__Wrapper"],
+  .eapps-google-reviews {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 8px !important;
+    box-sizing: border-box !important;
+  }
+}
