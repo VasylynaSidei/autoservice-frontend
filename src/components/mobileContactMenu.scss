@@ -56,8 +56,8 @@
   /* Общие кнопки */
   .menu-item {
     position: absolute;
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     color: #fff;
     display: flex;
@@ -91,14 +91,14 @@
   }
   
   .mobile-menu.open .whatsapp {
-    transform: translate(0, -70px);
+    transform: translate(0, -90px);
   }
   
   .mobile-menu.open .phone {
-    transform: translate(50px, -50px);
+    transform: translate(60px, -60px);
   }
   
   .mobile-menu.open .mail {
-    transform: translate(70px, 0);
+    transform: translate(90px, 0);
   }
   
