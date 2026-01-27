@@ -4,12 +4,14 @@ import "./WhyUsStats.scss"; // Подключаем CSS
 //
 function GoogleReviewsWidget() {
   useEffect(() => {
-    // Dynamically load Elfsight script
-    const script = document.createElement("script");
-    script.src = "https://apps.elfsight.com/p/platform.js";
-    script.defer = true;
-    document.body.appendChild(script);
+    if (!document.querySelector('script[src="https://apps.elfsight.com/p/platform.js"]')) {
+      const script = document.createElement("script");
+      script.src = "https://apps.elfsight.com/p/platform.js";
+      script.defer = true;
+      document.body.appendChild(script);
+    }
   }, []);
+  
 
   return (
     <section className="reviews-section" id="review">
