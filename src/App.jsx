@@ -7,12 +7,15 @@ import CookieBanner from "./components/CookieBanner";
 import Home from "./components/Home";
 import Impressum from "./components/Impressum";
 import Datenschutz from "./components/Datenschutz";
+import MobileContactMenu from "./components/MobileContactMenu";
 
 function App() {
   return (
    <>
       <ScrollToTop />
       <CookieBanner />
+      <MobileContactMenu />
+
       <Navbar />
 
       <Routes>
