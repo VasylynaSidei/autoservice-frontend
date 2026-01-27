@@ -3,8 +3,8 @@ nav {
   top: 0;
   width: 100%;
   padding: 20px 40px;
-  backdrop-filter: blur(10px); /* размытие */
-  -webkit-backdrop-filter: blur(20px); /* поддержка для Safari */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 100;
   transition: all 0.3s ease-in-out;
 }
@@ -43,7 +43,7 @@ nav {
     &::before {
       content: "";
       position: absolute;
-      top: 0; // линия сверху
+      top: 0;
       left: 0;
       width: 0%;
       height: 2px;
@@ -52,23 +52,25 @@ nav {
     }
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.1); // светлая прозрачная подложка
+      background-color: rgba(255, 255, 255, 0.1);
 
       &::before {
-        width: 100%; // линия расширяется
+        width: 100%;
       }
 
       a {
-        color: white; // можно усилить цвет текста
+        color: white;
       }
     }
   }
+
   .kontakt-btn-wrapper {
     a {
       text-decoration: none;
     }
   }
-  /* === VISIBILITY HELPERS === */
+
+  /* Visibility helpers */
   .desktop-only {
     display: block;
   }
@@ -98,72 +100,16 @@ nav {
   &.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
+
   &.open span:nth-child(2) {
     opacity: 0;
   }
+
   &.open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
 
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 5px;
-    left: 0;
-    padding: 2rem;
-    background-color: #565976df;
-    width: 100vw;
-    //padding: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-  }
-
-  .menu.open {
-    display: flex;
-  }
-
-  .menu-icon {
-    display: block;
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    z-index: 10000;
-    cursor: pointer;
-
-    span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      margin: 5px;
-      background-color: #6f6f6f;
-      transition: all 0.3s ease;
-    }
-
-    &.open span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    &.open span:nth-child(2) {
-      opacity: 0;
-    }
-    &.open span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-  }
-  .mobile-only {
-    display: block;
-  }
-}
-.logo {
-  width: 110px;
-  height: 60px;
-  background: url("../assets/images/logo4.png");
-  background-size: cover;
-  background-position: center;
-  margin: 0 0 0 2rem;
-}
 .fixed {
   padding-left: 0rem;
   padding-right: 0rem;
@@ -173,25 +119,17 @@ nav {
   right: 0;
   margin: 0;
   background: #363c3d;
-  background: radial-gradient(
-    circle,
-    rgba(54, 60, 61, 1) 30%,
-    rgba(18, 22, 24, 1) 100%
-  );
+  background: radial-gradient(circle, rgba(54, 60, 61, 1) 30%, rgba(18, 22, 24, 1) 100%);
   z-index: 1000;
-  //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .kontakt-btn-wrapper {
   margin: 0 15px;
   padding: 12px 15px;
-  &:hover {
-  }
 }
 
 .kontakt-btn-brg {
   background-color: #a40000;
-  //padding: 8px 10px;
   color: #e1e1e1;
   padding: 10px 30px;
   border: none;
@@ -203,23 +141,9 @@ nav {
   &:hover {
     background-color: #8c0000;
   }
-
-  @media (max-width: 1024px) {
-    display: block;
-    background-color: #a40000; // тёмно-красный в тон авто
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-
-    .kontakt-btn {
-      width: 100%;
-    }
-  }
 }
+
+/* Мобильные стили: Объединяем max-width 1024px, 768px и 480px */
 @media (max-width: 1024px) {
   .menu-icon {
     display: block;
@@ -231,41 +155,24 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 2rem;
-    background-color: #070b10f5;
     width: 100vw;
     height: 100vh;
+    padding: 2rem;
+    background-color: #070b10f5; /* Единый background */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+    z-index: 2000;
     font-size: 1.6rem;
+    overflow-y: auto; /* Чтобы скролл внутри меню, если нужно */
   }
 
   .menu.open {
     display: flex;
   }
-  .fixed {
-    padding-left: 0rem;
-    padding-right: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    background: #363c3d;
-    background: radial-gradient(
-      circle,
-      rgba(54, 60, 61, 1) 30%,
-      rgba(18, 22, 24, 1) 100%
-    );
-    z-index: 1000;
-    //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-  /* ❌ Скрываем кнопку СНАРУЖИ */
+
   .desktop-only {
     display: none !important;
   }
 
-  /* ✅ Показываем кнопку В МЕНЮ */
   .mobile-only {
     display: block;
     margin-top: 2rem;
@@ -273,88 +180,39 @@ nav {
   }
 
   .mobile-only .kontakt-btn-brg {
-    //   width: 100%;
     padding: 14px 0;
     font-size: 1.2rem;
   }
+
+  .logo {
+    width: 110px;
+    height: 60px;
+    margin: 0 0 0 2rem;
+  }
+
+  .fixed {
+    padding-left: 0rem;
+    padding-right: 1rem;
+  }
+
+  .kontakt-btn-brg {
+    padding: 8px 16px;
+  }
 }
+
 @media (max-width: 480px) {
   .logo {
     width: 80px;
     height: 50px;
-    background: url("../assets/images/logo4.png");
-    background-size: cover;
-    background-position: center;
-
-    // letter-spacing: 1px;
     margin: 0 0 0 1rem;
-  }
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 2rem;
-    background-color: #070b10f5;
-    width: 100vw;
-    height: 100vh;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    font-size: 1.6rem;
-  }
-  .menu.open {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    overflow-y: auto;
   }
 
   .menu-icon {
-    position: absolute;
     top: 1.2rem;
     right: 1.5rem;
-    z-index: 1002;
-    cursor: pointer;
 
     span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      margin: 5px;
       background-color: #d5d5d5;
-      transition: all 0.3s ease;
-    }
-
-    &.open span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    &.open span:nth-child(2) {
-      opacity: 0;
-    }
-    &.open span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
     }
   }
-  .fixed {
-    padding-left: 0rem;
-    padding-right: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    background: #363c3d;
-    background: radial-gradient(
-      circle,
-      rgba(54, 60, 61, 1) 30%,
-      rgba(18, 22, 24, 1) 100%
-    );
-    z-index: 1000;
-    //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-  .mobile-only {
-    display: block;
-  }}
-@media (min-width: 481px) and (max-width: 768px) {
 }

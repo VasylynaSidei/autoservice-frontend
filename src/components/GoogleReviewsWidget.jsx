@@ -3,15 +3,15 @@ import "./WhyUsStats.scss"; // Подключаем CSS
 //import "./GoogleReviewsWidget.scss";
 //
 function GoogleReviewsWidget() {
-  useEffect(() => {
-    if (!document.querySelector('script[src="https://apps.elfsight.com/p/platform.js"]')) {
-      const script = document.createElement("script");
-      script.src = "https://apps.elfsight.com/p/platform.js";
-      script.defer = true;
-      document.body.appendChild(script);
-    }
-  }, []);
-  
+ useEffect(() => {
+  if (!document.querySelector('script[src="https://apps.elfsight.com/p/platform.js"]')) {
+    const script = document.createElement("script");
+    script.src = "https://apps.elfsight.com/p/platform.js";
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+}, []);
+
 
   return (
     <section className="reviews-section" id="review">
