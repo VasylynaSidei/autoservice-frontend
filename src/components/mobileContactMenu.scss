@@ -4,6 +4,29 @@
       display: none;
     }
   }
+  /* Затемнённый фон */
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.489);
+    z-index: 998;
+    animation: fadeIn 0.25s ease;
+  }
+  
+  /* Меню поверх overlay */
+  .mobile-menu {
+    z-index: 999;
+  }
+  
+  /* Плавное появление */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   
   .mobile-menu {
     position: fixed;
