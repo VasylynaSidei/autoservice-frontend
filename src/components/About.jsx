@@ -26,10 +26,10 @@ function About() {
         </ul>
        
       </div>*/}
-            <div className="about-right">
+            {/* <div className="about-right">
               <img src="src/assets/images/car-service.jpg" alt="Unser Team" />
               <p className="about-note">Ihr Fahrzeug in besten Händen!</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
