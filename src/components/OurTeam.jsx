@@ -58,7 +58,7 @@ const [visible, setVisible] = useState(false);
       <div className="team-container">
         <h2 className="team-title">Unser Team</h2>
         <p className="team-subtitle">
-          Meisterbetrieb. Persönlich. Präzise. Lernen Sie die Menschen hinter G&amp;P kennen.
+          Meisterbetrieb. Persönlich. Präzise. Lernen Sie die Menschen hinter G&amp;P Meisterwerkstatt kennen.
         </p>
 
         <div className={`team-grid ${visible ? "visible" : ""}`}>
