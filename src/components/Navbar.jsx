@@ -1,28 +1,30 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom"; // ← добавили useNavigate
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./navbar.scss";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
   const navigate = useNavigate();
+
+  // Функция плавного скролла с учётом высоты navbar
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (!section) return;
-  
-    const navbarHeight = document.querySelector(".navbar")?.offsetHeight || 0;
-    const sectionTop =
-      section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-  
-    const distance = Math.abs(window.pageYOffset - sectionTop);
-  
+
+    // Точная высота navbar (берём динамически, т.к. fixed меняет padding)
+    const navbar = document.querySelector(".navbar");
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+    // Позиция секции с отступом под navbar
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY - navbarHeight - 16; // +16px — небольшой воздух сверху
+
     window.scrollTo({
       top: sectionTop,
-      behavior: distance < 600 ? "smooth" : "auto", // 👈 магия
+      behavior: "smooth",
     });
   };
-  
-  
+
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
@@ -43,29 +45,29 @@ function Navbar() {
     }
   }, [menuOpen]);
 
-  // Плавное закрытие меню + переход
+  // Обработчик клика по ссылкам
   const handleAnchorClick = (e) => {
     e.preventDefault();
-  
+
     const targetId = e.currentTarget.getAttribute("href")?.replace("#", "");
     if (!targetId) return;
-  
+
+    // Закрываем меню сразу
     setMenuOpen(false);
-  
-    // Если НЕ на главной
+
+    // Если НЕ на главной странице → переходим с хэшем
     if (window.location.pathname !== "/") {
       navigate(`/#${targetId}`);
+      // Скролл произойдёт автоматически благодаря ScrollToTop (если он настроен на hash)
       return;
     }
-  
-    // Ждём, пока меню закроется (мобильный layout!)
+
+    // На главной — ждём закрытия меню и скроллим
     setTimeout(() => {
       scrollToSection(targetId);
-    }, 300); // 👈 ключевой момент
+    }, 280); // 280–320 мс — комфортная задержка для мобильного
   };
-  
-  
-  
+
   return (
     <nav className={`navbar d-flex justify-content-between ${isFixed ? "fixed" : ""}`}>
       <p className="logo" />
@@ -77,27 +79,13 @@ function Navbar() {
       </div>
 
       <div className="d-flex">
-      <ul className={`menu ${menuOpen ? "open" : ""}`}>
-  <li>
-    <a href="#home" onClick={handleAnchorClick}>Startseite</a>
-  </li>
-  <li>
-    <a href="#services" onClick={handleAnchorClick}>Leistungen</a>
-  </li>
-  <li>
-    <a href="#about" onClick={handleAnchorClick}>Über uns</a>
-  </li>
-  <li>
-    <a href="#review" onClick={handleAnchorClick}>Bewertungen</a>
-  </li>
-  <li>
-    <a href="#contacts" onClick={handleAnchorClick}>Kontakte</a>
-  </li>
+        <ul className={`menu ${menuOpen ? "open" : ""}`}>
+          <li><a href="#home"     onClick={handleAnchorClick}>Startseite</a></li>
+          <li><a href="#services" onClick={handleAnchorClick}>Leistungen</a></li>
+          <li><a href="#about"    onClick={handleAnchorClick}>Über uns</a></li>
+          <li><a href="#review"   onClick={handleAnchorClick}>Bewertungen</a></li>
+          <li><a href="#contacts" onClick={handleAnchorClick}>Kontakte</a></li>
 
-  
-
-
-          {/* Мобильная кнопка звонка */}
           <li className="menu-kontakt mobile-only">
             <a href="tel:039916734060" onClick={handleAnchorClick}>
               <button className="kontakt-btn-brg">Kontakt</button>
@@ -105,7 +93,6 @@ function Navbar() {
           </li>
         </ul>
 
-        {/* Десктоп кнопка */}
         <div className="kontakt-btn-wrapper desktop-only">
           <a href="tel:039916734060">
             <button className="kontakt-btn-brg">Kontakt</button>
