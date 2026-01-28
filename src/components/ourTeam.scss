@@ -23,7 +23,7 @@
   color: #e1e1e1;
   font-size: 1.5rem;
 //  max-width: 720px;
-  margin: 2rem  0 ;
+  margin: 2rem  auto ;
   line-height: 1.5;
   text-align: justify;
   
@@ -168,6 +168,7 @@
     font-size: 1.125rem;       // ≈18px — комфортно для чтения
     line-height: 1.55;
     margin: 2rem auto;
+    text-align: justify;
   }
 
   .team-grid {

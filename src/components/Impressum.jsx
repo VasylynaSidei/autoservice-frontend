@@ -84,11 +84,7 @@ function Impressum({
         </p>
       </section>
 
-      <footer>
-        <p>
-          <a href="/datenschutz" title="Datenschutzerklärung">Datenschutzerklärung</a>
-        </p>
-      </footer></div>
+     </div>
     </article>
   );
 }
