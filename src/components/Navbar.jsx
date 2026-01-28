@@ -12,13 +12,16 @@ function Navbar() {
   
     const navbarHeight = document.querySelector(".navbar")?.offsetHeight || 0;
     const sectionTop =
-      section.getBoundingClientRect().top + window.pageYOffset;
+      section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+  
+    const distance = Math.abs(window.pageYOffset - sectionTop);
   
     window.scrollTo({
-      top: sectionTop - navbarHeight,
-      behavior: "smooth",
+      top: sectionTop,
+      behavior: distance < 600 ? "smooth" : "auto", // 👈 магия
     });
   };
+  
   
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
