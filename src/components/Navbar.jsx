@@ -6,8 +6,20 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
   const navigate = useNavigate();
-  const scrollPosition = useRef(0);
-
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+  
+    const navbarHeight = document.querySelector(".navbar")?.offsetHeight || 0;
+    const sectionTop =
+      section.getBoundingClientRect().top + window.pageYOffset;
+  
+    window.scrollTo({
+      top: sectionTop - navbarHeight,
+      behavior: "smooth",
+    });
+  };
+  
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
@@ -32,28 +44,23 @@ function Navbar() {
   const handleAnchorClick = (e) => {
     e.preventDefault();
   
-    const targetId = e.currentTarget.getAttribute("href")?.substring(1);
+    const targetId = e.currentTarget.getAttribute("href")?.replace("#", "");
     if (!targetId) return;
   
     setMenuOpen(false);
   
-    // Если мы НЕ на главной странице
+    // Если НЕ на главной
     if (window.location.pathname !== "/") {
       navigate(`/#${targetId}`);
       return;
     }
   
-    // Если мы уже на главной
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      setTimeout(() => {
-        targetElement.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }, 100);
-    }
+    // Ждём, пока меню закроется (мобильный layout!)
+    setTimeout(() => {
+      scrollToSection(targetId);
+    }, 300); // 👈 ключевой момент
   };
+  
   
   
   return (

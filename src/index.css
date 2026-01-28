@@ -57,3 +57,6 @@ body.no-scroll {
   opacity: 1;
   transform: translateX(0);
 }
+section {
+  scroll-margin-top: 90px; 
+}
