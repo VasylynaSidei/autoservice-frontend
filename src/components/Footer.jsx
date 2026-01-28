@@ -13,7 +13,7 @@ function Footer() {
 
     </div>
     <div className="text-center footer">
-      2025 - <FaRegCopyright /> All rights reserved
+      2026 - <FaRegCopyright /> All rights reserved
     </div></>
   );
 }
