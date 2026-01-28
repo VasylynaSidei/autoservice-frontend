@@ -5,8 +5,9 @@ nav {
   padding: 20px 40px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(20px);
-  z-index: 100;
+  z-index: 9999;
   transition: all 0.4s ease-in-out;
+  pointer-events: auto;
 }
 
 .logo {
@@ -63,7 +64,10 @@ nav {
       }
     }
   }
-
+  .menu,
+  .menu * {
+    pointer-events: auto;
+  }
   .kontakt-btn-wrapper {
     a {
       text-decoration: none;

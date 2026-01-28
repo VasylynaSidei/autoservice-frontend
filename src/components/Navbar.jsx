@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom"; // ← добавили useNavigate
 import "./navbar.scss";
 
@@ -6,6 +6,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
   const navigate = useNavigate();
+  const scrollPosition = useRef(0);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -28,30 +29,33 @@ function Navbar() {
   }, [menuOpen]);
 
   // Плавное закрытие меню + переход
-  const handleLinkClick = (e) => {
-    // Если это якорная ссылка на главной
-    if (e.currentTarget.getAttribute("href")?.startsWith("/#")) {
-      e.preventDefault(); // предотвращаем мгновенный переход
-
-      const targetId = e.currentTarget.getAttribute("href").substring(2); // "#home" → "home"
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        // Закрываем меню с небольшой задержкой → пользователь видит анимацию
-        setTimeout(() => {
-          setMenuOpen(false);
-          // Скроллим плавно
-          targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 150); // 150 мс — комфортная задержка
-      } else {
-        setMenuOpen(false);
-      }
-    } else {
-      // Для других ссылок (например tel:)
-      setMenuOpen(false);
+  const handleAnchorClick = (e) => {
+    e.preventDefault();
+  
+    const targetId = e.currentTarget.getAttribute("href")?.substring(1);
+    if (!targetId) return;
+  
+    setMenuOpen(false);
+  
+    // Если мы НЕ на главной странице
+    if (window.location.pathname !== "/") {
+      navigate(`/#${targetId}`);
+      return;
+    }
+  
+    // Если мы уже на главной
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      setTimeout(() => {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
     }
   };
-
+  
+  
   return (
     <nav className={`navbar d-flex justify-content-between ${isFixed ? "fixed" : ""}`}>
       <p className="logo" />
@@ -63,26 +67,29 @@ function Navbar() {
       </div>
 
       <div className="d-flex">
-        <ul className={`menu ${menuOpen ? "open" : ""}`}>
-          <li>
-            <Link to="/#home" onClick={handleLinkClick}>Startseite</Link>
-          </li>
-          <li>
-            <Link to="/#services" onClick={handleLinkClick}>Leistungen</Link>
-          </li>
-          <li>
-            <Link to="/#about" onClick={handleLinkClick}>Über uns</Link>
-          </li>
-          <li>
-            <Link to="/#review" onClick={handleLinkClick}>Bewertungen</Link>
-          </li>
-          <li>
-            <Link to="/#contacts" onClick={handleLinkClick}>Kontakte</Link>
-          </li>
+      <ul className={`menu ${menuOpen ? "open" : ""}`}>
+  <li>
+    <a href="#home" onClick={handleAnchorClick}>Startseite</a>
+  </li>
+  <li>
+    <a href="#services" onClick={handleAnchorClick}>Leistungen</a>
+  </li>
+  <li>
+    <a href="#about" onClick={handleAnchorClick}>Über uns</a>
+  </li>
+  <li>
+    <a href="#review" onClick={handleAnchorClick}>Bewertungen</a>
+  </li>
+  <li>
+    <a href="#contacts" onClick={handleAnchorClick}>Kontakte</a>
+  </li>
+
+  
+
 
           {/* Мобильная кнопка звонка */}
           <li className="menu-kontakt mobile-only">
-            <a href="tel:039916734060" onClick={handleLinkClick}>
+            <a href="tel:039916734060" onClick={handleAnchorClick}>
               <button className="kontakt-btn-brg">Kontakt</button>
             </a>
           </li>
