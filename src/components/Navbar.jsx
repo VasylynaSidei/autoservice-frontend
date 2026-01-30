@@ -4,8 +4,8 @@ import "./navbar.scss";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isFixed, setIsFixed] = useState(false);
   const navigate = useNavigate();
+  const [scrolled, setScrolled] = useState(false);
 
   // Функция плавного скролла с учётом высоты navbar
   const scrollToSection = (id) => {
@@ -32,11 +32,12 @@ function Navbar() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsFixed(window.scrollY > 50);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -77,7 +78,7 @@ function Navbar() {
   
 
   return (
-    <nav className={`navbar d-flex justify-content-between `}>
+    <nav className={`navbar d-flex justify-content-between  ${scrolled ? "scrolled" : ""}`}>
       <p className="logo" />
 
       <div className={`menu-icon ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>

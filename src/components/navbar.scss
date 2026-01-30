@@ -13,7 +13,14 @@
   background: #363c3d;
  background: radial-gradient(circle, rgba(54, 60, 61, 1) 30%, rgba(18, 22, 24, 1) 100%);
 }
-
+.navbar.scrolled {
+  background: #363c3d40;
+  background: radial-gradient(circle, rgba(54, 60, 61, 0.648) 30%, rgba(18, 22, 24, 0.588) 100%);
+ // background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(35px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
 .logo {
   width: 140px;
   height: 80px;
