@@ -77,7 +77,7 @@ function Navbar() {
   
 
   return (
-    <nav className={`navbar d-flex justify-content-between `}>
+    <nav className={`navbar d-flex justify-content-between ${isFixed ? "fixed" : ""}`}>
       <p className="logo" />
 
       <div className={`menu-icon ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
